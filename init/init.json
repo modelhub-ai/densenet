@@ -1,0 +1,9 @@
+{
+  "docker_id": "modelhub/keras-modelhub:1.0.0",
+  "external_contrib_files": [
+    {
+      "src_url": "https://github.com/modelhub-ai/densenet/releases/download/v1.0/model.h5",
+      "dest_file_path": "/contrib_src/model/model.h5"
+    }
+  ]
+}
