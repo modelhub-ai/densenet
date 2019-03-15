@@ -1,9 +1,9 @@
-# mobilenet
-This repository hosts the contributor source files for the mobilenet model. ModelHub integrates these files into an engine and controlled runtime environment. A unified API allows for out-of-the-box reproducible implementations of published models. For more information, please visit [www.modelhub.ai](http://modelhub.ai/) or contact us [info@modelhub.ai](mailto:info@modelhub.ai).
+# densenet
+This repository hosts the contributor source files for the densenet model. ModelHub integrates these files into an engine and controlled runtime environment. A unified API allows for out-of-the-box reproducible implementations of published models. For more information, please visit [www.modelhub.ai](http://modelhub.ai/) or contact us [info@modelhub.ai](mailto:info@modelhub.ai).
 ## meta
 | | |
 |-|-|
-| id | 016c5f2a-9b58-44a9-bc93-10dc67385035 | 
+| id | c0048222-b29f-4719-be6b-cac790251a19 | 
 | application_area | ImageNet | 
 | task | Classification | 
 | task_extended | ImageNet classification | 
@@ -12,22 +12,22 @@ This repository hosts the contributor source files for the mobilenet model. Mode
 ## publication
 | | |
 |-|-|
-| title | MobileNetV2: Inverted Residuals and Linear Bottlenecks | 
+| title | Densely Connected Convolutional Networks | 
 | source | arXiv | 
-| url | https://arxiv.org/abs/1801.04381 | 
-| year | 2018 | 
-| authors | Mark Sandler, Andrew Howard, Menglong Zhu, Andrey Zhmoginov, Liang-Chieh Chen | 
-| abstract | In this paper we describe a new mobile architecture, MobileNetV2, that improves the state of the art performance of mobile models on multiple tasks and benchmarks as well as across a spectrum of different model sizes. We also describe efficient ways of applying these mobile models to object detection in a novel framework we call SSDLite. Additionally, we demonstrate how to build mobile semantic segmentation models through a reduced form of DeepLabv3 which we call Mobile DeepLabv3. The MobileNetV2 architecture is based on an inverted residual structure where the input and output of the residual block are thin bottleneck layers opposite to traditional residual models which use expanded representations in the input an MobileNetV2 uses lightweight depthwise convolutions to filter features in the intermediate expansion layer. Additionally, we find that it is important to remove non-linearities in the narrow layers in order to maintain representational power. We demonstrate that this improves performance and provide an intuition that led to this design. Finally, our approach allows decoupling of the input/output domains from the expressiveness of the transformation, which provides a convenient framework for further analysis. We measure our performance on Imagenet classification, COCO object detection, VOC image segmentation. We evaluate the trade-offs between accuracy, and number of operations measured by multiply-adds (MAdd), as well as the number of parameters | 
-| google_scholar | https://scholar.google.com/scholar?oi=bibs&hl=en&cites=5034558864053164025&as_sdt=5 | 
-| bibtex | @article{DBLP:journals/corr/abs-1801-04381, author = {Mark Sandler and Andrew G. Howard and Menglong Zhu and Andrey Zhmoginov and Liang{-}Chieh Chen}, title = {Inverted Residuals and Linear Bottlenecks: Mobile Networks for Classification, Detection and Segmentation}, journal = {CoRR}, volume = {abs/1801.04381}, year = {2018}, url = {http://arxiv.org/abs/1801.04381}, archivePrefix = {arXiv}, eprint = {1801.04381}, timestamp = {Mon, 13 Aug 2018 16:48:30 +0200}, biburl = {https://dblp.org/rec/bib/journals/corr/abs-1801-04381}, bibsource = {dblp computer science bibliography, https://dblp.org}} | 
+| url | https://arxiv.org/abs/1608.06993 | 
+| year | 2016 | 
+| authors | Gao Huang, Zhuang Liu, Laurens van der Maaten, Kilian Q. Weinberger | 
+| abstract | Recent work has shown that convolutional networks can be substantially deeper, more accurate, and efficient to train if they contain shorter connections between layers close to the input and those close to the output. In this paper, we embrace this observation and introduce the Dense Convolutional Network (DenseNet), which connects each layer to every other layer in a feed-forward fashion. Whereas traditional convolutional networks with L layers have L connections - one between each layer and its subsequent layer - our network has L(L+1)/2 direct connections. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers. DenseNets have several compelling advantages: they alleviate the vanishing-gradient problem, strengthen feature propagation, encourage feature reuse, and substantially reduce the number of parameters. We evaluate our proposed architecture on four highly competitive object recognition benchmark tasks (CIFAR-10, CIFAR-100, SVHN, and ImageNet). DenseNets obtain significant improvements over the state-of-the-art on most of them, whilst requiring less computation to achieve high performance. Code and pre-trained models are available at this https URL. | 
+| google_scholar | https://scholar.google.com/scholar?oi=bibs&hl=en&cites=4205512852566836101 | 
+| bibtex | @article{DBLP:journals/corr/HuangLW16a, author = {Gao Huang and Zhuang Liu and Kilian Q. Weinberger}, title = {Densely Connected Convolutional Networks}, journal = {CoRR}, volume = {abs/1608.06993}, year = {2016}, url = {http://arxiv.org/abs/1608.06993}, archivePrefix = {arXiv}, eprint = {1608.06993}, timestamp = {Mon, 10 Sep 2018 15:49:32 +0200}, biburl = {https://dblp.org/rec/bib/journals/corr/HuangLW16a}, bibsource = {dblp computer science bibliography, https://dblp.org}} | 
 ## model
 | | |
 |-|-|
-| description | MobileNet utilizes an inverted residual structure. Shortcut connections are placed between thin bottleneck layers. Intermediate expansion layer make use of depthwise convolutions to filter features. MobileNet also removes non-linearities in the narrow layers as a means to maintain representational power. | 
-| provenance | https://github.com/onnx/models/tree/master/models/image_classification/mobilenet | 
+| description | DenseNet increases the depth of convolutional networks by simplifying the connectivity pattern between layers. It exploits the full potential of the network through feature reuse. | 
+| provenance | https://github.com/flyyufelix/DenseNet-Keras | 
 | architecture | Convolutional Neural Network (CNN) | 
 | learning_type | Supervised learning | 
-| format | .onnx | 
+| format | .h5 | 
 | I/O | model I/O can be viewed [here](contrib_src/model/config.json) | 
 | license | model license can be viewed [here](contrib_src/license/model) | 
 ## run
