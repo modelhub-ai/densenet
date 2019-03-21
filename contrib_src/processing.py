@@ -16,9 +16,9 @@ class ImageProcessor(ImageProcessorBase):
         return image
 
     def _preprocessAfterConversionToNumpy(self, npArr):
-        if npArr.shape[1] > 3:
+        if npArr.shape[0] > 3:
             npArr = npArr[0:3,:,:]
-        elif npArr.shape[1] < 3:
+        elif npArr.shape[0] < 3:
             npArr = npArr[[0],:,:]
             npArr = np.concatenate((npArr, npArr[[0],:,:]), axis = 1)
             npArr = np.concatenate((npArr, npArr[[0],:,:]), axis = 1)
